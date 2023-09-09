@@ -1,0 +1,15 @@
+E:\Microsoft Visual Studio\source\repos\Tetris\Tetris\obj\Debug\net6.0\Tetris.csproj.AssemblyReference.cache
+E:\Microsoft Visual Studio\source\repos\Tetris\Tetris\obj\Debug\net6.0\Tetris.GeneratedMSBuildEditorConfig.editorconfig
+E:\Microsoft Visual Studio\source\repos\Tetris\Tetris\obj\Debug\net6.0\Tetris.AssemblyInfoInputs.cache
+E:\Microsoft Visual Studio\source\repos\Tetris\Tetris\obj\Debug\net6.0\Tetris.AssemblyInfo.cs
+E:\Microsoft Visual Studio\source\repos\Tetris\Tetris\obj\Debug\net6.0\Tetris.csproj.CoreCompileInputs.cache
+E:\Microsoft Visual Studio\source\repos\Tetris\Tetris\bin\Debug\net6.0\Tetris.exe
+E:\Microsoft Visual Studio\source\repos\Tetris\Tetris\bin\Debug\net6.0\Tetris.deps.json
+E:\Microsoft Visual Studio\source\repos\Tetris\Tetris\bin\Debug\net6.0\Tetris.runtimeconfig.json
+E:\Microsoft Visual Studio\source\repos\Tetris\Tetris\bin\Debug\net6.0\Tetris.dll
+E:\Microsoft Visual Studio\source\repos\Tetris\Tetris\bin\Debug\net6.0\Tetris.pdb
+E:\Microsoft Visual Studio\source\repos\Tetris\Tetris\obj\Debug\net6.0\Tetris.dll
+E:\Microsoft Visual Studio\source\repos\Tetris\Tetris\obj\Debug\net6.0\refint\Tetris.dll
+E:\Microsoft Visual Studio\source\repos\Tetris\Tetris\obj\Debug\net6.0\Tetris.pdb
+E:\Microsoft Visual Studio\source\repos\Tetris\Tetris\obj\Debug\net6.0\Tetris.genruntimeconfig.cache
+E:\Microsoft Visual Studio\source\repos\Tetris\Tetris\obj\Debug\net6.0\ref\Tetris.dll
