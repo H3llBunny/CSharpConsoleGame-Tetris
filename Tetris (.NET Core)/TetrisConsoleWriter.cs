@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Formats.Asn1.AsnWriter;
-
-namespace Tetris
+﻿namespace Tetris
 {
     public class TetrisConsoleWriter
     {
@@ -14,15 +7,19 @@ namespace Tetris
         private int infoColumns;
         private int consoleRows;
         private int consoleColumns;
+        private char tetrisCharacter;
 
-        public TetrisConsoleWriter(int tetrisRow, int tetrisColumns, int inforColumns = 11)
+        public TetrisConsoleWriter(int tetrisRow, int tetrisColumns, char tetrisCharacter, int inforColumns = 11)
         {
             this.tetrisRows = tetrisRow;
             this.tetrisColumns = tetrisColumns;
             this.infoColumns = inforColumns;
             this.consoleRows = 1 + this.tetrisRows + 1;
             this.consoleColumns = 1 + this.tetrisColumns + 1 + this.infoColumns + 1;
+            this.tetrisCharacter = tetrisCharacter;
 
+            this.Frame = 0;
+            this.FramesToMoveFigure = 15;
 
             Console.WindowHeight = this.consoleRows + 1;
             Console.WindowWidth = this.consoleColumns;
@@ -32,7 +29,12 @@ namespace Tetris
             Console.Title = "Tetris v1.0";
             Console.CursorVisible = false;
         }
-        public void DrawAll(TetrisGameState state, ScoreManager scoreManager)
+
+        public int Frame { get; set; }
+
+        public int FramesToMoveFigure { get; private set; }
+
+        public void DrawAll(ITetrisGame state, ScoreManager scoreManager)
         {
             this.DrawBorder();
             this.DrawGameState(3 + this.tetrisColumns, state, scoreManager);
@@ -40,7 +42,7 @@ namespace Tetris
             this.DrawCurrentFigure(state.CurrentFigure, state.CurrentFigureRow, state.CurrentFigureCol);
         }
 
-        public void DrawGameState(int startColumn, TetrisGameState state, ScoreManager scoreManager)
+        public void DrawGameState(int startColumn, ITetrisGame state, ScoreManager scoreManager)
         {
             this.Write("Level:", 1, startColumn);
             this.Write(state.Level.ToString(), 2, startColumn);
@@ -49,7 +51,7 @@ namespace Tetris
             this.Write("Best:", 7, startColumn);
             this.Write(scoreManager.HighScore.ToString(), 8, startColumn);
             this.Write("Frame:", 10, startColumn);
-            this.Write(state.Frame.ToString() + " / " + (state.FramesToMoveFigure - state.Level).ToString(), 11, startColumn);
+            this.Write(this.Frame.ToString() + " / " + (this.FramesToMoveFigure - state.Level).ToString(), 11, startColumn);
             this.Write("Position:", 13, startColumn);
             this.Write($"{state.CurrentFigureRow}, {state.CurrentFigureCol}", 14, startColumn);
             this.Write("Keys:", 16, startColumn);
@@ -98,7 +100,7 @@ namespace Tetris
                 {
                     if (tetrisField.Body[row, col])
                     {
-                        line += "*";
+                        line += tetrisCharacter;
                     }
                     else
                     {
@@ -119,7 +121,7 @@ namespace Tetris
 
                     if (currentFigure.Body[row, col])
                     {
-                        this.Write("*", row + 1 + currentFigureRow, col + 1 + currentFigureColumn);
+                        this.Write(tetrisCharacter.ToString(), row + 1 + currentFigureRow, col + 1 + currentFigureColumn);
 
                     }
                 }

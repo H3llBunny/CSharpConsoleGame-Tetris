@@ -1,11 +1,12 @@
 ﻿using System.Text.RegularExpressions;
-using static System.Formats.Asn1.AsnWriter;
 
 namespace Tetris
 {
     public class ScoreManager
     {
         private readonly string highScoreFile;
+
+        private readonly int[] ScorePerLines = { 1, 40, 100, 300, 1200 };
 
         public ScoreManager(string highScoreFile)
         {
@@ -17,9 +18,9 @@ namespace Tetris
 
         public int HighScore { get; private set; }
 
-        public void AddToScore(int addToScore)
+        public void AddToScore(int level, int lines)
         {
-            this.Score += addToScore;
+            this.Score += ScorePerLines[lines] * level;
 
             if (this.Score > this.HighScore)
             {

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Tetris
+﻿namespace Tetris
 {
     public class Tetromino
     {
@@ -31,7 +25,7 @@ namespace Tetris
                 }
             }
 
-            return new Tetromino(newFigure);        
+            return new Tetromino(newFigure);
         }
     }
 }
